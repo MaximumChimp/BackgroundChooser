@@ -1,0 +1,47 @@
+<html>
+<head>
+       <title>Background Chooser</title>
+       <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+      <script>
+        $(document).ready(function(){
+            $('#main_box').click(function(){
+                $(this).css('background-image','none').children().css('border','none')
+            });
+            $('.mini_boxes').click(function(event){
+                event.stopPropagation();
+                var attr = $(this).attr('src')
+                $(this).css({'border':'5px solid yellow'}).siblings().css({'border':'none'}).parent().css("background-image","url("+attr+")")
+            });
+        });
+      </script>
+      <style>
+            #main_box {
+                background-color: lightgray;
+                background-repeat: no-repeat;
+                background-size: cover;
+                padding: 10px;
+            }
+            #main_box img {
+                display: block;
+                width: 200px;
+                height: 100px;
+                margin: 10px 0 15px 10px;
+            }
+            h1 {
+                text-align: center;
+                margin: 30px;
+                font-family: Verdana;
+            }
+      </style>
+</head>
+    <body>
+        <h1>Background Chooser</h1>
+        <div id="main_box" >
+            <img src="../BackgroundChooser/images/arena.gif" class="mini_boxes">
+            <img src="../BackgroundChooser/images/dawn.gif" class="mini_boxes">
+            <img src="../BackgroundChooser/images/savanah.gif" class="mini_boxes">
+            <img src="../BackgroundChooser/images/seashore.gif" class="mini_boxes">
+            <img src="../BackgroundChooser/images/station.gif" class="mini_boxes">
+        </div>
+    </body>
+</html>
